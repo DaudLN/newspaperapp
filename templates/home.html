@@ -1,0 +1,50 @@
+{% extends 'base.html' %} {% block title %} | Home{% endblock title%} 
+{% block content %}
+<div class="">
+  {% if user.is_authenticated %}
+  <h5>
+    Hi <span class="text-primary fw-bold">{{user.username}} !</span> Welcome to
+    Newspaper website
+  </h5>
+  <div class="p-3 mb-4 bg-light rounded-3">
+    <div class="container-fluid py-3">
+      <h1 class="display-5 fw-bold">Newspaper article website</h1>
+      <p class="col-md-8 fs-4">
+        A Newspaper article website, awesomely built with Django.
+      </p>
+      <p class="lead">
+        <a href="{% url 'articles' %}" class="btn btn-primary"
+          >View articles here</a
+        >
+      </p>
+    </div>
+  </div>
+  {% else %}
+  <h5>
+    <span class="text-danger">You are not login.</span> Upon login, you will be
+    able to <span class="text-info">view</span>,
+    <span class="text-primary">create</span>,
+    <span class="text-success">edit</span> and
+    <span class="text-danger">delete</span> article
+  </h5>
+  <div class="d-flex">
+    <p class="mx-1"><a href="{% url 'login' %}">Login</a></p>
+    |
+    <p class="mx-1"><a href="{% url 'signup' %}">Signup</a></p>
+  </div>
+  <div class="p-3 mb-4 bg-light rounded-3">
+    <div class="container-fluid py-3">
+      <h1 class="display-5 fw-bold">Newspaper article website</h1>
+      <p class="col-md-8 fs-4">
+        A Newspaper article website, awesomely built with Django.
+      </p>
+      <p class="lead">
+        <a href="{% url 'articles' %}" class="btn btn-primary"
+          >View articles here</a
+        >
+      </p>
+    </div>
+  </div>
+  {% endif %}
+</div>
+{% endblock content %}
