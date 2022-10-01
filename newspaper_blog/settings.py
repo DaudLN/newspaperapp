@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 import os
 from pathlib import Path
+from time import asctime
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,7 +27,7 @@ SECRET_KEY = 'django-insecure-nd%@i$3ftg1i4uzz+^nbw-yhfpcq87u-@(xgq9nf(+7m1n8f5l
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -48,11 +49,13 @@ INSTALLED_APPS = [
     'debug_toolbar',
     "crispy_forms",
     "crispy_bootstrap5",
+    "bootstrap5",
 ]
 
 MIDDLEWARE = [
     'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -135,6 +138,8 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIR = [os.path.join(BASE_DIR, 'static')]
+
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
@@ -150,4 +155,32 @@ LOGOUT_REDIRECT_URL = 'home'
 # Email backend
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# Bootstrap5 template
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler'
+        },
+        'file': {
+            'class': 'logging.FileHandler',
+            'filename': 'general.log'
+        }
+    },
+    'loggers': {
+        '': {
+            'handlers': ['console', 'file'],
+            'level': os.environ.get('DJANGO_LOG_LEVEL', 'INFO')
+        }
+    },
+    'formatters': {
+        'verbose': {
+            'format': '{asctime} ({levelname})-{name}-{message}',
+            'style': '{'
+        }
+    }
+}
