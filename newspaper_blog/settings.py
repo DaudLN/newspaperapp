@@ -24,7 +24,7 @@ SECRET_KEY = 'django-insecure-nd%@i$3ftg1i4uzz+^nbw-yhfpcq87u-@(xgq9nf(+7m1n8f5l
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['http://namayaladlnewspaper.up.railway.app/']
+ALLOWED_HOSTS = ['http://namayaladlnewpaper.up.railway.app/']
 
 # Application definition
 
