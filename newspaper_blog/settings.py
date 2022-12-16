@@ -24,7 +24,7 @@ SECRET_KEY = 'django-insecure-nd%@i$3ftg1i4uzz+^nbw-yhfpcq87u-@(xgq9nf(+7m1n8f5l
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://namayaladlnewpaper.up.railway.app/']
+ALLOWED_HOSTS = ['namayaladlnewpaper.up.railway.app']
 
 # Application definition
 
@@ -58,12 +58,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-]
-
-INTERNAL_IPS = [
-    # ...
-    '127.0.0.1',
-    # ...
 ]
 
 ROOT_URLCONF = 'newspaper_blog.urls'
