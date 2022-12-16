@@ -631,3 +631,5 @@ Watching for file changes with StatReloader
 /var/www/html/django/projects/newspaper_blog/newspaper_blog/settings.py changed, reloading.
 Watching for file changes with StatReloader
 Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
