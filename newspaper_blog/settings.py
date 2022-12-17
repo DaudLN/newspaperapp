@@ -150,7 +150,7 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'daudnamayala@gmail.com'
-EMAIL_HOST_PASSWORD = 'Hadija+Ismail@1973'
+EMAIL_HOST_PASSWORD = 'fuwvzncbthdzaqlv'
 
 DEFAULT_FROM_EMAIL = 'daudnamayala@gmail.com'
 
