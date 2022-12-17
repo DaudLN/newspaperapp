@@ -144,7 +144,15 @@ LOGOUT_REDIRECT_URL = 'home'
 
 # Email backend
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'daudnamayala@gmail.com'
+EMAIL_HOST_PASSWORD = 'Hadija+Ismail@1973'
+
+DEFAULT_FROM_EMAIL = 'daudnamayala@gmail.com'
 
 # Bootstrap5 template
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
