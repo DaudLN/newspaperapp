@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-nd%@i$3ftg1i4uzz+^nbw-yhfpcq87u-@(xgq9nf(+7m1n8f5l
 DEBUG = True
 
 ALLOWED_HOSTS = ['namayaladlnewpaper.up.railway.app']
-
+CSRF_TRUSTED_ORIGINS = ['https://namayaladlnewpaper.railway.app']
 # Application definition
 
 INSTALLED_APPS = [
